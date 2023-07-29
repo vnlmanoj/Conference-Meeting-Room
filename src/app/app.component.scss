@@ -1,0 +1,80 @@
+
+
+.example-container {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: #eee;
+  }
+
+
+.side-nav-style{
+    background-color: blue;
+    width:15%;
+}
+
+.side-nav-content-style{
+    padding:20px;
+    border-bottom: 1px solid black;
+}
+
+.main-content-style{
+    background-color: purple;
+    width:85%;
+}
+
+.buttons-container{
+    padding: 20px;
+    width: 100%;
+    text-align: center;
+
+    button{
+        padding: 20px;
+        margin: 20px;
+    }
+}
+
+
+.active-menu-item{
+    background-color: violet;
+}
+
+
+ngx-datatable {
+    height: calc(100% - 60px) !important;
+  
+    &.has-search-filter {
+      height: calc(100% - 108px) !important;
+    }
+  }
+
+.full-height{
+    height: 100%;
+}
+
+.height-90{
+    height: 90%;
+}
+
+// ngx-datatable.unstyled {
+
+//     datatable-body {
+//       height: 50vh;
+//       overflow-x: hidden;
+//       width: 100% !important;
+//     }
+  
+//     datatable-body-cell {
+//       background-color: #FFF !important;
+//       border-bottom: solid 10px rgb(238, 238, 238);
+//     }
+  
+//     .left-aligned .datatable-body-cell-label {
+//       display: flex;
+//       width: 100%;
+//       text-align: left;
+//     }
+  
+//   }

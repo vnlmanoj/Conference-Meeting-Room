@@ -1,0 +1,46 @@
+<mat-sidenav-container class="example-container">
+  <mat-sidenav mode="side" class="side-nav-style" opened>
+    <div class="side-nav-content-style" [class.active-menu-item]="bookings" (click)="showBookingsModule()">Show bookings Module</div>
+    <div class="side-nav-content-style" [class.active-menu-item]="rooms" (click)="showRoomsModule()">Show Rooms Module</div>
+    <div class="side-nav-content-style" [class.active-menu-item]="employees" (click)="showEmployeeModule()">Show Employee Module</div>
+    <div class="side-nav-content-style" [class.active-menu-item]="premesis" (click)="showPremesisModule()">Show Premesis Module</div>
+    <div class="side-nav-content-style" [class.active-menu-item]="services" (click)="showServicesModule()">Show Services Module</div>
+  </mat-sidenav>
+  <mat-sidenav-content class="main-content-style">
+    <div class="buttons-container" *ngIf="bookings">
+      <button mat-raised-button color="primary">Create Booking</button>
+      <button mat-raised-button color="primary">Edit Booking</button>
+      <button mat-raised-button color="warn">Cancel Booking</button>
+    </div>
+    <div class="full-height" *ngIf="rooms">
+      <div class="buttons-container">
+        <button mat-raised-button color="primary">Add Room</button>
+        <button mat-raised-button color="primary">Suspend/Hold Room</button>
+        <button mat-raised-button color="warn" type="button" (click)="deleteRoom()">Remove Room </button>
+      </div>
+      <div class="height-90">
+        <ngx-datatable #roomsTable class="material" [selected]="selected" [selectionType]="SelectionType.single" [rows]="roomsData" [columns]="roomscolumns" [columnMode]="'flex'" [headerHeight]="60"
+          [rowHeight]="75" [scrollbarV]="false" [reorderable]="false" [messages]="{emptyMessage: 'No Rooms found.'}" [virtualization]="false">
+        </ngx-datatable>
+      </div>
+    </div>
+    <div class="buttons-container" *ngIf="employees">
+      <button mat-raised-button color="primary">Add Employee Details</button>
+      <button mat-raised-button color="primary">{{bookinggranttext}}</button>
+      <button mat-raised-button color="warn" type="button">Remove Employee Details</button>
+    </div>
+    <div class="buttons-container" *ngIf="premesis">
+      <button mat-raised-button color="primary">Add Premise</button>
+      <button mat-raised-button color="primary">Suspend/Hod Premise</button>
+      <button mat-raised-button color="warn">Remove Premise</button>
+    </div>
+    <div class="buttons-container" *ngIf="services">
+      <button mat-raised-button color="primary">Book Service for Quantity</button>
+      <button mat-raised-button color="primary">Amend / edit Service for Quantity</button>
+      <button mat-raised-button color="warn">Cancel Service for Quantity</button>
+    </div>
+  </mat-sidenav-content>
+</mat-sidenav-container>
+
+
+
